@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #607d8b98;
+  color: #fff;
+}
+
+span.circle {
+  background: #607d8bcc;
+  border-radius: 50%;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  display: inline-block;
+  line-height: 1.6em;
+  margin-right: 15px;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+}

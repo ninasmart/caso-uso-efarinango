@@ -1,0 +1,33 @@
+:host ::ng-deep {
+  .pb-3 {
+    margin-bottom: 1rem;
+  }
+
+  .generate-pokemon {
+    padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+    border: 1px solid #dcdadad6;
+    background-color: white;
+  }
+  .title-generate {
+    text-align: center;
+  }
+  .btn-options {
+    display: flex;
+    justify-content: center;
+  }
+  .lbl-space {
+    padding-right: 5px;
+  }
+
+  .slider-attack {
+    accent-color: rgb(182, 115, 238);
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .icon-edit {
+    padding-left: 5px;
+  }
+}

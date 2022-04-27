@@ -1,0 +1,67 @@
+$btn-color-primary: rgb(182, 115, 238);
+$btn-color-primary-hover: rgb(141, 47, 218);
+$btn-color-primary-active: rgb(129, 80, 168);
+
+:host ::ng-deep {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .btn-primary {
+    border-color: transparent;
+    background-color: $btn-color-primary !important;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    height: 40px;
+    width: 100px;
+    &:hover {
+      background-color: $btn-color-primary-hover !important;
+    }
+    &:active {
+      background-color: $btn-color-primary-active !important;
+    }
+  }
+
+  .align-text {
+    padding-left: 0.5rem;
+  }
+
+  .datatable {
+    border: 2px solid #dcdadad6;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 1rem;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  th,
+  td {
+    border: 2px solid #dcdadad6;
+    padding-left: 1rem;
+    text-align: left;
+    vertical-align: top;
+    width: 20%;
+  }
+  th {
+    text-align: center;
+  }
+
+  .icon-edit {
+    color: blue;
+  }
+  .icon-delete {
+    color: red;
+  }
+  .options {
+    display: flex;
+    justify-content: space-between;
+  }
+  .space {
+    padding-bottom: 1rem;
+  }
+}

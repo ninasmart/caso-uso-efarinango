@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="col">
+    <div class="pb-3">
+      <label>Listado de Pokemón</label>
+    </div>
+    <div class="row options">
+      <input class="align-text" type="text" [(ngModel)]="searchInput" placeholder="🔍 Buscar">
+      <button class="btn btn-primary" (click)="showGeneratePokemon()">Nuevo</button>
+    </div>
+  </div>
+
+  <table class="datatable">
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Ataque</th>
+      <th>Defensa</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let pokemon of pokemons">
+      <td>{{pokemon.name}}</td>
+      <td><img style="width: 40px; height: 40px;" [src]="pokemon.image" /></td>
+      <td>{{pokemon.attack}}</td>
+      <td>{{pokemon.defense}}</td>
+      <td class="actions">
+        <i class="icon-edit pointer" (click)="editPokemon(pokemon)"><img [src]="'/assets/icons/editar.png'" /></i>
+        <i class="icon-delete pointer" (click)="deletePokemon(pokemon)"><img [src]="'/assets/icons/borrar.png'" /></i>
+      </td>
+    </tr>
+  </table>
+
+  <div *ngIf="viewGeneratePokemon">
+    <div class="generate-pokemon">
+        <form [formGroup]="frmGeneraPokemon" (ngSubmit)="onSubmit()">
+          <div class="title-generate">
+            <label>Nuevo Pokemón</label>
+          </div>
+          <div class="col">
+            <div class="options space">
+              <div>
+                <label class="lbl-space">Nombre:</label>
+                <input type="text" formControlName="name" placeholder="nombre" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                          <div *ngIf="f.name.errors.required">Nombre es requerido</div>
+                      </div>
+              </div>
+              <div>
+                <span> <label> Ataque: </label>{{frmGeneraPokemon.get('attack')?.value}} </span>
+                <input class="slider-attack" min="1" max="100" value="0" type="range" formControlName="attack">
+                <span> <label> 100 </label></span>
+              </div>
+            </div>
+            <div class="options space">
+              <div>
+                <label class="lbl-space">Imagen:</label>
+                <input type="text" placeholder="uri" formControlName="image">
+              </div>
+              <div>
+                <span> <label> Defensa: </label>{{frmGeneraPokemon.get('defense')?.value}}</span>
+                <input class="slider-attack" min="1" max="100" value="0" type="range" formControlName="defense">
+                <span> <label> 100 </label></span>
+              </div>
+            </div>
+          </div>
+          <div class="btn-options">
+            <div class="lbl-space">
+              <button class="btn btn-primary" type="submit"> Guardar</button>
+            </div>
+            <div>
+              <button class="btn btn-primary" (click)="cancelGeneratePokemon()" tybe="button">Cancelar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+
+</div>
